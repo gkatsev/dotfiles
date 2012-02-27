@@ -1,13 +1,20 @@
-set nocompatible
-
 " functions
+fun! MyPoolFun()
+  let d = vam#install#Pool()
+  let d['vividchalk'] = { 'title' : 'vividchalk', 'type' : 'git', 'url': 'https://github.com/gkatsev/vim-vividchalk' }
+  return d
+endf
+
+let g:vim_addon_manager = {}
+let g:vim_addon_manager.pool_fun = 'MyPoolFun'
+
 fun! ToggleMouse()
     if &mouse == 'a'
       set mouse=
     else
       set mouse=a     
     endif
-endfun
+endf
 
 fun! ToggleRNU()
   if &rnu
@@ -17,7 +24,7 @@ fun! ToggleRNU()
     set rnu
     set nonu
   endif
-endfun
+endf
 
 fun! SetupVAM()
   " YES, you can customize this vam_install_path path and everything still works!
@@ -49,7 +56,7 @@ fun! SetupVAM()
   "    ..ActivateAddons(["github:foo", .. => github://foo/vim-addon-foo
   "    ..ActivateAddons(["github:user/repo", .. => github://user/repo
   " Also see section "2.2. names of addons and addon sources" in VAM's documentation
-endfun
+endf
 call SetupVAM()
 " experimental: run after gui has been started (gvim) [3]
 " option1:  au VimEnter * call SetupVAM()
@@ -59,10 +66,15 @@ call SetupVAM()
 
 "Settings
 
+" set colorscheme to vividchalk
 colorscheme vividchalk
 
+" enable syntax highlighting and filetype plugins and indents
 syntax enable
 filetype plugin indent on
+
+" remove backwards compat with vim
+set nocompatible
 
 " enable relative numbering if available, otherwise, regular number
 if exists('+rnu')
@@ -159,6 +171,4 @@ command! Q q
 command! W w
 
 " to reload vimrc
-command! Vimrc :source $MYVIMRC<CR>
-
-
+command! Vimrc :source $MYVIMRC
