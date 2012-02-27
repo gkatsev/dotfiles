@@ -1,0 +1,8 @@
+[user]
+	name = Gary Katsevman
+	email = git@gkatsev.com
+[github]
+	user = gkatsev
+	token = a34d551b23962bfc5a948b6affdf6ca4
+[core]
+	editor = vim
