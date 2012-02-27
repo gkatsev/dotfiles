@@ -1,2 +1,12 @@
 These are my dotfiles.
-It includes my vimrc, vimperatorrc, gitconfig and whatever else that would be needed.
+
+There is a dotfile for:
+.vimrc
+.vim
+.vimperatorrc
+.vimperator
+.gitconfig
+.hgrc
+.ttytterrc
+
+There is an install script that should symlink these to the home directory.
