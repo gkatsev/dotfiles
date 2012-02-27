@@ -1,0 +1,56 @@
+map <C-s> :bmark -keyword<space>
+map w :winopen<space>
+
+map <a-Right> gt
+map <a-Left>  gT
+map <a-Up> <Esc>:tabm +1<CR>
+map <a-Down> <Esc>:tabm -1<CR>
+
+map <C-S-w> <Nop>
+nmap <C-S-w> <Nop>
+vmap <C-S-w> <Nop>
+imap <C-S-w> <Nop>
+cmap <C-S-w> <Nop>
+map <C-q> <Nop>
+nmap <C-q> <Nop>
+vmap <C-q> <Nop>
+imap <C-q> <Nop>
+cmap <C-q> <Nop>
+
+map <A-1> <C-[>g0
+map <A-2> <C-[>2gt
+map <A-3> <C-[>3gt
+map <A-4> <C-[>4gt
+map <A-5> <C-[>5gt
+map <A-6> <C-[>6gt
+map <A-7> <C-[>7gt
+map <A-8> <C-[>8gt
+map <A-9> <C-[>9gt
+map <A-0> <C-[>10gt
+map <A-q> <C-[>11gt
+map <A-w> <C-[>12gt
+map <A-e> <C-[>13gt
+map <A-r> <C-[>14gt
+map <A-t> <C-[>15gt
+map <A-u> <C-[>17gt
+map <A-i> <C-[>18gt
+map <A-a> <C-6>
+
+" Options
+set urlseparator=,,\\s
+set verbose=0
+set editor="gvim -f"
+set newtab=all
+set complete=sfl
+set defsearch=google
+set hinttags="//*[@onclick or @onmouseover or @onmousedown or @onmouseup or @oncommand or @class='lk' or @class='s' or @class='lk cs' or @class='msc' or @class='ll'] | //input[not(@type='hidden')] | //a | //area | //iframe | //textarea | //button | //select | //xhtml:*[@onclick or @onmouseover or @onmousedown or @onmouseup or @oncommand or @class='lk' or @class='s'] | //xhtml:input[not(@type='hidden')] | //xhtml:a | //xhtml:area | //xhtml:iframe | //xhtml:textarea | //xhtml:button | //xhtml:select | //tr[@class='rr' or @class='ur']/td[position()=5]"
+set previouspattern+=older,<<
+set nextpattern+=newer,>>
+
+set tn
+
+command! vimperatorrc :source ~/.vimperatorrc
+
+au LocationChange .* js modes.passAllKeys = /.*\.google\.com/.test(buffer.URL) | /docs\.google\.com/.test(buffer.URL) | /mail\.google\.com/.test(buffer.URL) | /google\.com\/reader/.test(buffer.URL) | /mangafox\.com/.test(buffer.URL) | /mangareader\.net/.test(buffer.URL) | /webchat\.freenode\.net/.test(buffer.URL)
+
+" vim: set ft=vimperator:
