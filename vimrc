@@ -142,6 +142,9 @@ autocmd FileType make set noexpandtab softtabstop=8 shiftwidth=8
 " set j and k to go line wise even on wrapped lines
 noremap j gj
 noremap k gk
+" make <Up> and <Down> behave like j and k
+noremap <Up> gk
+noremap <Down> gj
 
 " space and backsapce to travel pagewise
 noremap <BS> <PageUp>
