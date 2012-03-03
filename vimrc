@@ -130,6 +130,9 @@ set whichwrap+=h,l,~,<,>,[,],b,s
 " highlight more matches
 set matchpairs+=<:>,':',":"
 
+" change EasyMotion leader key back to <Leader> until I find conflicts
+let g:EasyMotion_leader_key = '<Leader>'
+
 " set statusline to a certain format and always have it visible
 set statusline=%f%m%r%h%w\ [%{&ff}]\ [TYPE=%Y]\ [A=\%03.3b]\ %=\ [%04l:%04v]\ %P
 set laststatus=2 
