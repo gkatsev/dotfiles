@@ -89,6 +89,9 @@ endif
 
 set pastetoggle=<F8>
 
+" Set hidden so I can switch buffers without saving
+set hidden
+
 " Show what mode we're in and what command we're typing
 set showcmd
 set showmode
@@ -183,7 +186,6 @@ inoremap "<cr> "<cr>"<Esc>O
 
 " commands
 " keep accidentally shifting Q and W
-command! Q! q!
 command! Q q
 command! W w
 
