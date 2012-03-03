@@ -183,6 +183,7 @@ inoremap "<cr> "<cr>"<Esc>O
 
 " commands
 " keep accidentally shifting Q and W
+command! Q! q!
 command! Q q
 command! W w
 
