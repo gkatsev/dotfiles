@@ -160,6 +160,9 @@ noremap <Space> <PageDown>
 " Binding for NerdTree
 map <leader>nt :NerdTreeToggle<CR>
 
+" Bind to turn off highlighting of search terms
+map <leader>no :nohl<CR>
+
 " set a toggle for mouse and RNU
 map <F6> :call ToggleMouse()<CR>
 map <F7> :call ToggleRNU()<CR>
