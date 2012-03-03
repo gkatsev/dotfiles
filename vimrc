@@ -11,8 +11,10 @@ let g:vim_addon_manager.pool_fun = 'MyPoolFun'
 fun! ToggleMouse()
     if &mouse == 'a'
       set mouse=
+      echo 'mouse functionality turned OFF'
     else
       set mouse=a     
+      echo 'mouse functionality turned ON'
     endif
 endf
 
@@ -20,9 +22,11 @@ fun! ToggleRNU()
   if &rnu
     set nornu
     set nu
+    echo 'switched to NU'
   else
     set rnu
     set nonu
+    echo 'switched to RNU'
   endif
 endf
 
