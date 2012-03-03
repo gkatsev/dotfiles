@@ -149,6 +149,10 @@ autocmd FileType python set softtabstop=4 shiftwidth=4
 autocmd FileType make set noexpandtab softtabstop=8 shiftwidth=8
 
 " Mappings
+" Add line above current line, return to normal mode and current line
+noremap <leader>O O<Esc>j
+noremap <leader>o o<Esc>k
+
 " set j and k to go line wise even on wrapped lines
 noremap j gj
 noremap k gk
