@@ -1,0 +1,21 @@
+startup_message off
+hardstatus off
+# hardstatus alwayslastline
+# backtick 1 1200 1200 whoami
+termcap XT true
+
+# hardstatus string "%1200H %c | %-Lw%{= BW}%50>%n* %t%{-}%+Lw%<"
+
+# caption always "%{yK}%C:%s %A - %d-%M-%y | %-Lw%50>%{Ky}%n%f* %t%{-}%+Lw%<%{- Wk}%{yK}"
+caption always "%{WK}%C:%s %A - %d-%M-%y | %-Lw%50>%{KW}%n%f* %t%{-}%+Lw%<%{- WK}%{WK}"
+
+activity "%"
+crlf off
+defmonitor on
+defscrollback 5000
+shell -$SHELL
+term $TERM
+
+vbell off
+autodetach on
+altscreen on
