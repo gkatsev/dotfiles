@@ -7,6 +7,7 @@ VIMPDIR="ln -s `pwd`/vimperator .vimperator"
 GITRC="ln -s `pwd`/gitconfig .gitconfig"
 HGRC="ln -s `pwd`/hgrc .hgrc"
 TTY="ln -s `pwd`/ttytterrc .ttytterrc"
+SCREEN="ln -s `pwd'/screenrc .screenrc"
 
 cd
 
@@ -34,5 +35,9 @@ $HGRC
 echo "Linking .ttytterrc"
 echo $TTY
 $TTY
+
+echo "Linking .screenrc"
+echo $SCREEM
+$SCREEN
 
 echo "Finished installing"
