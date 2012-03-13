@@ -1,7 +1,7 @@
 " functions
 fun! MyPoolFun()
   let d = vam#install#Pool()
-  let d['vividchalk'] = { 'title' : 'vividchalk', 'type' : 'git', 'url': 'https://github.com/gkatsev/vim-vividchalk' }
+  let d['vividchalk'] = { 'title' : 'vividchalk', 'type' : 'git', 'url': 'git://github.com/gkatsev/vim-vividchalk.git' }
   return d
 endf
 
