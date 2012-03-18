@@ -100,6 +100,7 @@ set showmode
 set smartcase
 set incsearch
 set hlsearch
+set ignorecase
 
 " Set tabs stuff
 set softtabstop=2
