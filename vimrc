@@ -150,7 +150,7 @@ set matchpairs+=<:>,':',":"
 let g:EasyMotion_leader_key = '<Leader>'
 
 " set statusline to a certain format and always have it visible
-set statusline=%f%m%r%h%w\ [%{&ff}]\ [TYPE=%Y]\ [A=\%03.3b]\ %=\ [%04l:%04v]\ %P
+set statusline=%f%m%r%h%w\ [%{&ff}]\ [TYPE=%Y]\ [PASTE=%{&paste}]\ [MOUSE=%{&mouse}]\ %=\ [%04l\|%04L:%04v]\ %P
 set laststatus=2 
 
 " autocommands
