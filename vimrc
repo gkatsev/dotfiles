@@ -89,6 +89,11 @@ endif
 
 set pastetoggle=<F8>
 
+" have ctrlp open new files in current window
+let g:ctrlp_open_new_file = 'r'
+" have ctrlp accept an extra character to where to open stuff via <c-y> & <c-o>
+let g:ctrlp_arg_map = 1
+
 " Set hidden so I can switch buffers without saving
 set hidden
 
@@ -119,6 +124,9 @@ set wildmode=list:longest,full
 " dont increment numbers starting with 0 as octal
 set nrformats-=octal
 set nrformats+=alpha
+
+" disable textwidth
+set textwidth=0
 
 " enable colorcolumn at 80 characters if it exists
 if exists('+colorcolumn')
