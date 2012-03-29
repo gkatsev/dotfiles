@@ -128,6 +128,9 @@ set nrformats+=alpha
 " disable textwidth
 set textwidth=0
 
+" make current line stay in the middle of the screen
+set scrolloff=999
+
 " enable colorcolumn at 80 characters if it exists
 if exists('+colorcolumn')
         set colorcolumn=80
