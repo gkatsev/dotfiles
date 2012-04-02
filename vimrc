@@ -8,14 +8,23 @@ endf
 let g:vim_addon_manager = {}
 let g:vim_addon_manager.pool_fun = 'MyPoolFun'
 
+fun! TogglePaste()
+  if &paste
+    set nopaste
+    echo 'nopaste'
+  else
+    set paste
+    echo 'paste'
+enf
+
 fun! ToggleMouse()
-    if &mouse == 'a'
-      set mouse=
-      echo 'mouse functionality turned OFF'
-    else
-      set mouse=a     
-      echo 'mouse functionality turned ON'
-    endif
+  if &mouse == 'a'
+    set mouse=
+    echo 'mouse='
+  else
+    set mouse=a     
+    echo 'mouse=a'
+  endif
 endf
 
 fun! ToggleRNU()
@@ -86,8 +95,6 @@ if exists('+rnu')
 else
         set nu
 endif
-
-set pastetoggle=<F8>
 
 " have ctrlp open new files in current window
 let g:ctrlp_open_new_file = 'r'
@@ -185,6 +192,7 @@ map <leader>no :nohl<CR>
 " set a toggle for mouse and RNU
 map <F6> :call ToggleMouse()<CR>
 map <F7> :call ToggleRNU()<CR>
+map <F8> :call TogglePaste()<CR>
 
 " Enable ability to autoclose parens and the such
 inoremap (( ()<Left>
