@@ -1,7 +1,8 @@
 " functions
 fun! MyPoolFun()
   let d = vam#install#Pool()
-  let d['vividchalk'] = { 'title' : 'vividchalk', 'type' : 'git', 'url': 'git://github.com/gkatsev/vim-vividchalk.git' }
+  let d['vividchalk'] = { 'title' : 'vividchalk', 'type' : 'git', 'url' : 'git://github.com/gkatsev/vim-vividchalk.git' }
+  let d['smartinput'] = { 'title' : 'smartinput', 'type' : 'git', 'url' : 'https://github.com/kana/vim-smartinput.git' }
   return d
 endf
 
@@ -61,7 +62,7 @@ fun! SetupVAM()
   " be installed form www.vim.org. Lookup MergeSources to get more control
   " let g:vim_addon_manager['drop_git_sources'] = !executable('git')
 
-  call vam#ActivateAddons(['ctrlp', 'bufexplorer.zip', 'The_NERD_tree', 'The_NERD_Commenter', 'EasyMotion', 'surround', 'matchit.zip', 'vividchalk'], {'auto_install' : 0})
+  call vam#ActivateAddons(['smartinput', 'ctrlp', 'bufexplorer.zip', 'The_NERD_tree', 'The_NERD_Commenter', 'EasyMotion', 'surround', 'matchit.zip', 'vividchalk'], {'auto_install' : 0})
   " sample: call vam#ActivateAddons(['pluginA','pluginB', ...], {'auto_install' : 0})
   "  - look up source from pool (<c-x><c-p> complete plugin names):
   "    ActivateAddons(["foo",  ..
