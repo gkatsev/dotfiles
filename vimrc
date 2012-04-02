@@ -195,20 +195,6 @@ map <F6> :call ToggleMouse()<CR>
 map <F7> :call ToggleRNU()<CR>
 map <F8> :call TogglePaste()<CR>
 
-" Enable ability to autoclose parens and the such
-inoremap (( ()<Left>
-inoremap [[ []<Left>
-inoremap {{ {}<Left>
-inoremap << <><Left>
-inoremap '' ''<Left>
-inoremap "" ""<Left>
-inoremap (<cr> (<cr>)<Esc>O
-inoremap [<cr> [<cr>]<Esc>O
-inoremap {<cr> {<cr>}<Esc>O
-inoremap <<cr> <<cr>><Esc>O
-inoremap '<cr> '<cr>'<Esc>O
-inoremap "<cr> "<cr>"<Esc>O
-
 " commands
 " keep accidentally shifting Q and W
 command! Q q
