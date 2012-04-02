@@ -15,7 +15,7 @@ fun! TogglePaste()
   else
     set paste
     echo 'paste'
-enf
+endf
 
 fun! ToggleMouse()
   if &mouse == 'a'
