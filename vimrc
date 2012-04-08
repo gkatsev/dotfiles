@@ -16,6 +16,7 @@ fun! TogglePaste()
   else
     set paste
     echo 'paste'
+  endif
 endf
 
 fun! ToggleMouse()
