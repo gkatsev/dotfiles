@@ -63,7 +63,7 @@ fun! SetupVAM()
   " be installed form www.vim.org. Lookup MergeSources to get more control
   " let g:vim_addon_manager['drop_git_sources'] = !executable('git')
 
-  call vam#ActivateAddons(['smartinput', 'ctrlp', 'bufexplorer.zip', 'The_NERD_tree', 'The_NERD_Commenter', 'EasyMotion', 'surround', 'matchit.zip', 'vividchalk'], {'auto_install' : 0})
+  call vam#ActivateAddons(['Solarized', 'smartinput', 'ctrlp', 'bufexplorer.zip', 'The_NERD_tree', 'The_NERD_Commenter', 'EasyMotion', 'surround', 'matchit.zip', 'vividchalk'], {'auto_install' : 0})
   " sample: call vam#ActivateAddons(['pluginA','pluginB', ...], {'auto_install' : 0})
   "  - look up source from pool (<c-x><c-p> complete plugin names):
   "    ActivateAddons(["foo",  ..
@@ -81,8 +81,11 @@ call SetupVAM()
 
 "Settings
 
+set t_Co=16
 " set colorscheme to vividchalk
-colorscheme vividchalk
+set background=dark
+"colorscheme vividchalk
+colorscheme solarized
 
 " enable syntax highlighting and filetype plugins and indents
 syntax enable
