@@ -189,7 +189,7 @@ noremap <BS> <PageUp>
 noremap <Space> <PageDown>
 
 " Binding for NerdTree
-map <leader>nt :NerdTreeToggle<CR>
+map <leader>nt :NERDTreeToggle<CR>
 
 " Bind to turn off highlighting of search terms
 map <leader>no :nohl<CR>
