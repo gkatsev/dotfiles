@@ -10,4 +10,4 @@ There is a dotfile for:
 .ttytterrc
 .zshrc
 
-There is an install script that should symlink these to the home directory.
+To install these, you should clone the directory, and then update the git submodules `git submodules update --recursive`. Afterwards, there's an install script that symlinks all these files and directories if these files do not already exist.
