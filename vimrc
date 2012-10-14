@@ -91,9 +91,7 @@ filetype plugin indent on
 set nocompatible
 
 " set colorscheme to solarized
-if has('gui_running')
-  colorscheme solarized
-endif
+colorscheme solarized
 set t_Co=16
 set background=dark
 let g:solarized_termcolors=16
