@@ -14,8 +14,8 @@ for file in $files; do
 done
 
 theme="rkj-repos-gkatsev.zsh-theme"
-themeF="~/.oh-my-zsh/themes/$theme"
-if [ ! -f $themeF ]
+themeF="$HOME/.oh-my-zsh/themes/$theme"
+if [ ! -e $themeF ]
   then
   cmd="ln -s `pwd`/$theme $themeF"
   echo $cmd
