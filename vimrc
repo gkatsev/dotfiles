@@ -3,6 +3,8 @@ fun! MyPoolFun()
   let d = vam#install#Pool()
   let d['vividchalk'] = { 'title' : 'vividchalk', 'type' : 'git', 'url' : 'git://github.com/gkatsev/vim-vividchalk.git' }
   let d['smartinput'] = { 'title' : 'smartinput', 'type' : 'git', 'url' : 'git://github.com/kana/vim-smartinput.git' }
+  let d['vim-grillz'] = { 'title' : 'vim-grillz', 'type' : 'git', 'url' : 'git://github.com/dahu/vim-grillz.git' }
+  let d['vimpeg'] = { 'title' : 'vimpeg', 'type' : 'git', 'url' : 'git://github.com/dahu/Vimpeg.git' }
   return d
 endf
 
@@ -63,7 +65,7 @@ fun! SetupVAM()
   " be installed form www.vim.org. Lookup MergeSources to get more control
   " let g:vim_addon_manager['drop_git_sources'] = !executable('git')
 
-  call vam#ActivateAddons(['Solarized', 'smartinput', 'ctrlp', 'bufexplorer.zip', 'The_NERD_tree', 'The_NERD_Commenter', 'EasyMotion', 'surround', 'matchit.zip', 'vividchalk'], {'auto_install' : 0})
+  call vam#ActivateAddons(['YankRing', 'UltiSnips', 'Syntastic','Tagbar', 'Solarized', 'delimitMate', 'ctrlp', 'bufexplorer.zip', 'The_NERD_tree', 'The_NERD_Commenter', 'EasyMotion', 'surround', 'matchit.zip', 'vividchalk'], {'auto_install' : 0})
   " sample: call vam#ActivateAddons(['pluginA','pluginB', ...], {'auto_install' : 0})
   "  - look up source from pool (<c-x><c-p> complete plugin names):
   "    ActivateAddons(["foo",  ..
@@ -106,6 +108,9 @@ let g:ctrlp_open_new_file = 'r'
 " have ctrlp accept an extra character to where to open stuff via <c-y> & <c-o>
 let g:ctrlp_arg_map = 1
 
+let mapleader = " "
+let g:mapleader = " "
+
 " Set hidden so I can switch buffers without saving
 set hidden
 
@@ -120,8 +125,8 @@ set hlsearch
 set ignorecase
 
 " Set tabs stuff
-set softtabstop=2
-set shiftwidth=2
+set softtabstop=4
+set shiftwidth=4
 set expandtab
 set smarttab
 
@@ -145,7 +150,7 @@ set scrolloff=999
 
 " enable colorcolumn at 80 characters if it exists
 if exists('+colorcolumn')
-        set colorcolumn=80
+        set colorcolumn=100
 endif
 
 " + marks the stop      
@@ -169,6 +174,7 @@ set statusline=%f%m%r%h%w\ [%{&ff}]\ [TYPE=%Y]\ [PASTE=%{&paste}]\ [MOUSE=%{&mou
 set laststatus=2 
 
 " autocommands
+autocmd FileType javascript set softtabstop=4 shiftwidth=4
 autocmd FileType python set softtabstop=4 shiftwidth=4
 autocmd FileType make set noexpandtab softtabstop=8 shiftwidth=8
 
@@ -185,8 +191,8 @@ noremap <Up> gk
 noremap <Down> gj
 
 " space and backsapce to travel pagewise
-noremap <BS> <PageUp>
-noremap <Space> <PageDown>
+noremap <leader><BS> <PageUp>
+noremap <leader><Space> <PageDown>
 
 " Binding for NerdTree
 map <leader>nt :NERDTreeToggle<CR>
@@ -194,15 +200,55 @@ map <leader>nt :NERDTreeToggle<CR>
 " Bind to turn off highlighting of search terms
 map <leader>no :nohl<CR>
 
-" set a toggle for mouse and RNU
+" mapping for toggling stuff
 map <F6> :call ToggleMouse()<CR>
 map <F7> :call ToggleRNU()<CR>
 map <F8> :call TogglePaste()<CR>
+
+" map stuff for location list and quick-fix window
+map <leader>co :cw<CR>
+map <leader>cn :cn<CR>
+map <leader>cp :cp<CR>
+
+map <leader>lo :lw<CR>
+map <leader>ln :lne<CR>
+map <leader>lp :lp<CR>
+
+" syntastic mappings
+map <leader>sc :SyntasticCheck<CR>
+map <leader>se :Errors<CR>
 
 " commands
 " keep accidentally shifting Q and W
 command! Q q
 command! W w
+command! Wq wq
 
 " to reload vimrc
 command! Vimrc :source $MYVIMRC
+command! VimrcEdit :tabe $MYVIMRC
+
+" syntastic options
+let g:syntastic_javascript_checker = "jsl"
+let g:syntastic_javascript_jsl_conf = expand("$JSDEV/jslint.players.conf")
+let g:syntastic_javascript_jslint_conf = "--continue --eqeq --es5 --forin --plusplus --sloppy --vars false --cap --browser --devel --indent 4 --maxlen 100 --white --undef --nomen --regexp --bitwise --newcap"
+let g:syntastic_error_symbol="✗"
+let g:syntastic_warning_symbol="⚠"
+let g:syntastic_style_error_symbol="s✗"
+let g:syntastic_style_warning_symbol="s⚠"
+let g:syntastic_auto_jump=1
+let g:syntastic_auto_loc_list=1
+let g:syntastic_loc_list_height=5
+
+" ctrlp options
+let g:ctrlp_map = '<c-t>'
+let g:ctrlp_switch_buffer = 0
+let g:ctrlp_working_path_mode = 0
+let g:ctrlp_arg_map = 1
+let g:ctrlp_cmd = 'CtrlPMixed'
+
+" delimitmate options
+let delimitMate_expand_cr = 1
+let delimitMate_expand_space = 1
+let delimitMate_smart_quotes = 1
+let delimitMate_balance_matchpairs = 1
