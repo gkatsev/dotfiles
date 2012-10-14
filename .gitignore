@@ -1,3 +1,4 @@
 *.swp
 vim/vim-addons/*
 vimperator/info/*
+oh-my-zsh/*
