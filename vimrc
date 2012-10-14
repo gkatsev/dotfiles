@@ -83,18 +83,20 @@ call SetupVAM()
 
 "Settings
 
-set t_Co=16
-" set colorscheme to vividchalk
-set background=dark
-"colorscheme vividchalk
-colorscheme solarized
-
 " enable syntax highlighting and filetype plugins and indents
 syntax enable
 filetype plugin indent on
 
 " remove backwards compat with vim
 set nocompatible
+
+" set colorscheme to solarized
+if has('gui_running')
+  colorscheme solarized
+endif
+set t_Co=16
+set background=dark
+let g:solarized_termcolors=16
 
 " enable relative numbering if available, otherwise, regular number
 if exists('+rnu')
