@@ -7,12 +7,6 @@ ZSH=$HOME/.oh-my-zsh
 # time that oh-my-zsh is loaded.
 ZSH_THEME="rkj-repos-gkatsev"
 
-# Example aliases
-alias vim="mvim -v"
-alias zshconfigreload='. ~/.zshrc'
-alias zshconfig="mvim -v ~/.zshrc"
-alias ohmyzsh="mvim -v ~/.oh-my-zsh"
-
 alias node="nocorrect node"
 alias npm="nocorrect npm"
 
@@ -41,15 +35,25 @@ plugins=(git osx brew ant mvn github node npm python vagrant fasd history-substr
 source $ZSH/oh-my-zsh.sh
 source ~/.profile
 
-# Customize to your needs...
-export PATH=/Users/gkatsevman/.rvm/gems/ruby-1.9.3-p194/bin:/Users/gkatsevman/.rvm/gems/ruby-1.9.3-p194@global/bin:/Users/gkatsevman/.rvm/rubies/ruby-1.9.3-p194/bin:/Users/gkatsevman/.rvm/bin:/Users/gkatsevman/work/tools/apache-maven/3.0.3/bin:/Users/gkatsevman/work/tools/ant/1.7.1/bin:/Users/gkatsevman/work/users/brightcove/bin:/Library/Frameworks/Python.framework/Versions/2.7/bin:/Library/Frameworks/Python.framework/Versions/2.7/bin:/Users/gkatsevman/work/sandbox/usr-local/origin-services/bin:/Users/gkatsevman/p/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin
+if [[ "$OSTYPE" =~ "^darwin.*" ]]
+then
 
-export JSDEV=/Users/gkatsevman/work/sandbox/little-endians/experience/js
-export ORIGIN=/Users/gkatsevman/work/sandbox/little-endians/origin
+    alias vim="mvim -v"
+    alias zshconfigreload='. ~/.zshrc'
+    alias zshconfig="mvim -v ~/.zshrc"
+    alias ohmyzsh="mvim -v ~/.oh-my-zsh"
 
-export CLASSPATH=.:/Users/gkatsevman/work/IdeaProjects/Algorithms/lib:$CLASSPATH
+    export PATH=/Users/gkatsevman/.rvm/gems/ruby-1.9.3-p194/bin:/Users/gkatsevman/.rvm/gems/ruby-1.9.3-p194@global/bin:/Users/gkatsevman/.rvm/rubies/ruby-1.9.3-p194/bin:/Users/gkatsevman/.rvm/bin:/Users/gkatsevman/work/tools/apache-maven/3.0.3/bin:/Users/gkatsevman/work/tools/ant/1.7.1/bin:/Users/gkatsevman/work/users/brightcove/bin:/Library/Frameworks/Python.framework/Versions/2.7/bin:/Library/Frameworks/Python.framework/Versions/2.7/bin:/Users/gkatsevman/work/sandbox/usr-local/origin-services/bin:/Users/gkatsevman/p/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin
 
-launchctl setenv PATH $PATH
-launchctl setenv JSDEV $JSDEV
-launchctl setenv ORIGIN $ORIGIN
-launchctl setenv CLASSPATH $CLASSPATH
+    export JSDEV=/Users/gkatsevman/work/sandbox/little-endians/experience/js
+    export ORIGIN=/Users/gkatsevman/work/sandbox/little-endians/origin
+
+    export CLASSPATH=.:/Users/gkatsevman/work/IdeaProjects/Algorithms/lib:$CLASSPATH
+
+    launchctl setenv PATH $PATH
+    launchctl setenv JSDEV $JSDEV
+    launchctl setenv ORIGIN $ORIGIN
+    launchctl setenv CLASSPATH $CLASSPATH
+
+fi
+
