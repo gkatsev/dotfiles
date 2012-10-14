@@ -1,8 +1,8 @@
-#!/usr/bin/env zsh
+#!/usr/bin/env sh
 
 files="vimrc vimperatorrc vimperator gitconfig hgrc ttytterrc screenrc zshrc oh-my-zsh"
 for file in $files; do
-  if [[ ! ( -a $HOME/.$file ) ]]
+  if [ ! -e $HOME/.$file ]
   then
     echo "Linking .$file"
     cmd="ln -s `pwd`/$file $HOME/.$file"
@@ -12,5 +12,16 @@ for file in $files; do
     echo ".$file already exists"
   fi
 done
+
+theme="rkj-repos-gkatsev.zsh-theme"
+themeF="~/.oh-my-zsh/themes/$theme"
+if [ ! -f $themeF ]
+  then
+  cmd="ln -s `pwd`/$theme $themeF"
+  echo $cmd
+  eval $cmd
+else
+  echo "$themeF already exists"
+fi
 
 echo "Finished installing"
