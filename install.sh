@@ -1,6 +1,6 @@
 #!/usr/bin/env sh
 
-files="vimrc vimperatorrc vimperator gitconfig hgrc ttytterrc screenrc zshrc oh-my-zsh"
+files="vimrc vimperatorrc vimperator gitconfig hgrc ttytterrc screenrc zshrc oh-my-zsh vim"
 for file in $files; do
   if [ ! -e $HOME/.$file ]
   then
