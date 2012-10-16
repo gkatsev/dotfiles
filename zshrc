@@ -9,6 +9,7 @@ ZSH_THEME="rkj-repos-gkatsev"
 
 alias node="nocorrect node"
 alias npm="nocorrect npm"
+alias ack="nocorrect ack"
 
 alias jslint="jslint --continue --eqeq --es5 --forin --plusplus --sloppy --vars false --cap --browser --devel --indent 4 --maxlen 100 --white --undef --nomen --regexp --bitwise --newcap"
 
