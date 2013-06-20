@@ -51,6 +51,6 @@ set tn
 
 command! vimperatorrc :source ~/.vimperatorrc
 
-au LocationChange .* js modes.passAllKeys = /.*\.google\.com/.test(buffer.URL) | /docs\.google\.com/.test(buffer.URL) | /mail\.google\.com/.test(buffer.URL) | /google\.com\/reader/.test(buffer.URL) | /mangafox\.com/.test(buffer.URL) | /mangareader\.net/.test(buffer.URL) | /webchat\.freenode\.net/.test(buffer.URL) | /mangahere\.com/.test(buffer.URL)
+au LocationChange .* js modes.passAllKeys = /.*\.google\.com/.test(buffer.URL) | /docs\.google\.com/.test(buffer.URL) | /mail\.google\.com/.test(buffer.URL) | /google\.com\/reader/.test(buffer.URL) | /mangafox\.com/.test(buffer.URL) | /mangareader\.net/.test(buffer.URL) | /webchat\.freenode\.net/.test(buffer.URL) | /mangahere\.com/.test(buffer.URL) | /feedly\.com/.test(buffer.URL) | /newsblur\.com/.test(buffer.URL)
 
 " vim: set ft=vimperator:
