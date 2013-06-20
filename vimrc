@@ -17,7 +17,7 @@ fun! ToggleMouse()
     set mouse=
     echo 'mouse='
   else
-    set mouse=a     
+    set mouse=a
     echo 'mouse=a'
   endif
 endf
@@ -106,7 +106,7 @@ if exists('+colorcolumn')
         set colorcolumn=100
 endif
 
-" + marks the stop      
+" + marks the stop
 set cursorcolumn
 set cursorline
 
