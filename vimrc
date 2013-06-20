@@ -49,6 +49,11 @@ set t_Co=16
 set background=dark
 let g:solarized_termcolors=16
 
+" font
+if has('gui_macvim')
+    set guifont=DejaVu\ Sans\ Mono:h15
+endif
+
 " enable relative numbering if available, otherwise, regular number
 if exists('+rnu')
         set rnu
@@ -77,9 +82,17 @@ set incsearch
 set hlsearch
 set ignorecase
 
+" Listchars
+" eol:␤,
+set listchars=trail:·,tab:→,
+set list
+
+" iskeyword
+set isk+=-
+
 " Set tabs stuff
-set softtabstop=4
-set shiftwidth=4
+set softtabstop=2
+set shiftwidth=2
 set expandtab
 set smarttab
 
@@ -103,7 +116,7 @@ set scrolloff=999
 
 " enable colorcolumn at 80 characters if it exists
 if exists('+colorcolumn')
-        set colorcolumn=100
+        set colorcolumn=80
 endif
 
 " + marks the stop
@@ -123,11 +136,11 @@ set matchpairs+=<:>,':',":"
 let g:EasyMotion_leader_key = '<Leader>'
 
 " set statusline to a certain format and always have it visible
-set statusline=%f%m%r%h%w\ [%{&ff}]\ [TYPE=%Y]\ [PASTE=%{&paste}]\ [MOUSE=%{&mouse}]\ %=\ [%04l\|%04L:%04v]\ %P
-set laststatus=2 
+set statusline=%f%m%r%h%w\ %{fugitive#statusline()}\ [%{&ff}]\ [TYPE=%Y]\ [PASTE=%{&paste}]\ [MOUSE=%{&mouse}]\ %=\ [%04l\|%04L:%04v]\ %P
+set laststatus=2
 
 " autocommands
-autocmd FileType javascript set softtabstop=4 shiftwidth=4
+autocmd FileType javascript set softtabstop=2 shiftwidth=2
 autocmd FileType python set softtabstop=4 shiftwidth=4
 autocmd FileType make set noexpandtab softtabstop=8 shiftwidth=8
 
@@ -146,6 +159,10 @@ noremap <Down> gj
 " space and backsapce to travel pagewise
 noremap <leader><BS> <PageUp>
 noremap <leader><Space> <PageDown>
+
+" bind to edit and reload vimrc
+map <leader>ve :VimrcEdit<CR>
+map <leader>vr :Vimrc<CR>
 
 " Binding for NerdTree
 map <leader>nt :NERDTreeToggle<CR>
@@ -171,6 +188,11 @@ map <leader>lp :lp<CR>
 map <leader>sc :SyntasticCheck<CR>
 map <leader>se :Errors<CR>
 
+" map FTs
+map <leader>js :set ft=javascript<CR>
+map <leader>ht :set ft=html<CR>
+map <leader>cs :set ft=css<CR>
+
 " commands
 " keep accidentally shifting Q and W
 command! Q q
@@ -184,7 +206,7 @@ command! VimrcEdit :tabe $MYVIMRC
 " syntastic options
 let g:syntastic_javascript_checker = "jsl"
 let g:syntastic_javascript_jsl_conf = expand("$JSDEV/jslint.players.conf")
-let g:syntastic_javascript_jslint_conf = "--continue --eqeq --es5 --forin --plusplus --sloppy --vars false --cap --browser --devel --indent 4 --maxlen 100 --white --undef --nomen --regexp --bitwise --newcap"
+"let g:syntastic_javascript_jslint_conf = "--continue --eqeq --es5 --forin --plusplus --sloppy --vars false --cap --browser --devel --indent 4 --maxlen 100 --white --undef --nomen --regexp --bitwise --newcap"
 let g:syntastic_error_symbol="✗"
 let g:syntastic_warning_symbol="⚠"
 let g:syntastic_style_error_symbol="s✗"
@@ -205,3 +227,6 @@ let delimitMate_expand_cr = 1
 let delimitMate_expand_space = 1
 let delimitMate_smart_quotes = 1
 let delimitMate_balance_matchpairs = 1
+
+" vim-instant-markdown options
+let g:instant_markdown_slow = 1
