@@ -36,9 +36,13 @@ plugins=(git osx brew ant mvn github node npm python vagrant fasd history-substr
 source $ZSH/oh-my-zsh.sh
 source ~/.profile
 
+unsetopt correct
+
 if [[ "$OSTYPE" =~ "^darwin.*" ]]
 then
 
+    alias e='mvim'
+    alias vi='vim'
     alias vim="mvim -v"
     alias zshconfigreload='. ~/.zshrc'
     alias zshconfig="mvim -v ~/.zshrc"
