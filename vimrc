@@ -130,7 +130,7 @@ set backspace=2
 set whichwrap+=h,l,~,<,>,[,],b,s
 
 " highlight more matches
-set matchpairs+=<:>,':',":"
+set matchpairs+=<:>,":"
 
 " change EasyMotion leader key back to <Leader> until I find conflicts
 let g:EasyMotion_leader_key = '<Leader>'
