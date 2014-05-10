@@ -54,11 +54,11 @@ if has('gui_macvim')
     set guifont=DejaVu\ Sans\ Mono:h15
 endif
 
-" enable relative numbering if available, otherwise, regular number
+" enable relative numbering if available
+" if both enabled, in a new enough vim, instead of 0, you get current line num
+set nu
 if exists('+rnu')
         set rnu
-else
-        set nu
 endif
 
 " have ctrlp open new files in current window
