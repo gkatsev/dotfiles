@@ -35,6 +35,7 @@ map <A-t> <C-[>15gt
 map <A-u> <C-[>17gt
 map <A-i> <C-[>18gt
 map <A-a> <C-6>
+map <M-a> <C-6>
 
 " Options
 set urlseparator=,,\\s
@@ -46,8 +47,7 @@ set defsearch=google
 set hinttags="//*[@onclick or @onmouseover or @onmousedown or @onmouseup or @oncommand or @class='lk' or @class='s' or @class='lk cs' or @class='msc' or @class='ll'] | //input[not(@type='hidden')] | //a | //area | //iframe | //textarea | //button | //select | //xhtml:*[@onclick or @onmouseover or @onmousedown or @onmouseup or @oncommand or @class='lk' or @class='s'] | //xhtml:input[not(@type='hidden')] | //xhtml:a | //xhtml:area | //xhtml:iframe | //xhtml:textarea | //xhtml:button | //xhtml:select | //tr[@class='rr' or @class='ur']/td[position()=5]"
 set previouspattern+=older,<<
 set nextpattern+=newer,>>
-
-set tn
+set tabnumbers
 
 command! vimperatorrc :source ~/.vimperatorrc
 
