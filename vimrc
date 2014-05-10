@@ -203,6 +203,9 @@ command! Wq wq
 command! Vimrc :source $MYVIMRC
 command! VimrcEdit :tabe $MYVIMRC
 
+" NERDTree options
+let NERDTreeShowHidden=1
+
 " syntastic options
 let g:syntastic_javascript_checker = "jsl"
 let g:syntastic_javascript_jsl_conf = expand("$JSDEV/jslint.players.conf")
