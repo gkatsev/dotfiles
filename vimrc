@@ -218,6 +218,3 @@ let delimitMate_expand_cr = 1
 let delimitMate_expand_space = 1
 let delimitMate_smart_quotes = 1
 let delimitMate_balance_matchpairs = 1
-
-" vim-instant-markdown options
-let g:instant_markdown_slow = 1
