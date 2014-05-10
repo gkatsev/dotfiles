@@ -206,18 +206,6 @@ command! VimrcEdit :tabe $MYVIMRC
 " NERDTree options
 let NERDTreeShowHidden=1
 
-" syntastic options
-let g:syntastic_javascript_checker = "jsl"
-let g:syntastic_javascript_jsl_conf = expand("$JSDEV/jslint.players.conf")
-"let g:syntastic_javascript_jslint_conf = "--continue --eqeq --es5 --forin --plusplus --sloppy --vars false --cap --browser --devel --indent 4 --maxlen 100 --white --undef --nomen --regexp --bitwise --newcap"
-let g:syntastic_error_symbol="✗"
-let g:syntastic_warning_symbol="⚠"
-let g:syntastic_style_error_symbol="s✗"
-let g:syntastic_style_warning_symbol="s⚠"
-let g:syntastic_auto_jump=1
-let g:syntastic_auto_loc_list=1
-let g:syntastic_loc_list_height=5
-
 " ctrlp options
 let g:ctrlp_map = '<c-t>'
 let g:ctrlp_switch_buffer = 0
