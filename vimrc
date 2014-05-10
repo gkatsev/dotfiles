@@ -119,7 +119,7 @@ if exists('+colorcolumn')
         set colorcolumn=80
 endif
 
-" + marks the stop
+" + marks the spot
 set cursorcolumn
 set cursorline
 
