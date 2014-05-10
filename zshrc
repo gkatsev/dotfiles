@@ -1,5 +1,3 @@
-source ~/.profile
-
 if [[ "$OSTYPE" =~ "^darwin.*" ]]
 then
 
