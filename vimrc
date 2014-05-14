@@ -69,6 +69,9 @@ let g:ctrlp_arg_map = 1
 let mapleader = " "
 let g:mapleader = " "
 
+" set option (alt) to be meta in vim on osx
+set macmeta
+
 " Set hidden so I can switch buffers without saving
 set hidden
 
