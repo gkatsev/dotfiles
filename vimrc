@@ -51,7 +51,7 @@ let g:solarized_termcolors=16
 
 " font
 if has('gui_macvim')
-    set guifont=DejaVu\ Sans\ Mono:h15
+  set guifont=DejaVu\ Sans\ Mono:h15
 endif
 
 " enable relative numbering if available
@@ -208,6 +208,7 @@ command! VimrcEdit :tabe $MYVIMRC
 
 " NERDTree options
 let NERDTreeShowHidden=1
+let NERDTreeIgnore=['\~$', '.swp$[[file]]']
 
 " ctrlp options
 let g:ctrlp_map = '<c-t>'
