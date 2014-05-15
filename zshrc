@@ -44,5 +44,9 @@ if [[ "$OSTYPE" =~ "^darwin.*" ]] then
     alias chromes="open -a /Applications/Google\ Chrome.app/"
     alias firefox="open -a /Applications/FirefoxAurora.app/"
 
-    launchctl setenv PATH $PATH
+    home=$(dirname ~/.)
+    cwd=`pwd | sed -E "s_${home}/?_~/_"`
+    echo -ne "\e]1;$cwd\a"
+    unset home
+    unset cwd
 fi
