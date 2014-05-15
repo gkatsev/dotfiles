@@ -44,8 +44,7 @@ if [[ "$OSTYPE" =~ "^darwin.*" ]] then
     alias chromes="open -a /Applications/Google\ Chrome.app/"
     alias firefox="open -a /Applications/FirefoxAurora.app/"
 
-    home=$(dirname ~/.)
-    cwd=`pwd | sed -E "s_${home}/?_~/_"`
+    cwd=`pwd | sed -E "s_${HOME}/?_~/_"`
     echo -ne "\e]1;$cwd\a"
     unset home
     unset cwd
