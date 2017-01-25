@@ -52,7 +52,15 @@ let g:solarized_termcolors=16
 " font
 if has('gui_macvim')
   set guifont=DejaVu\ Sans\ Mono:h15
+
+  " set option (alt) to be meta in vim on osx
+  set macmeta
 endif
+
+if has('nvim')
+  tnoremap <Esc> <c-\><c-n>
+endif
+
 
 " enable relative numbering if available
 " if both enabled, in a new enough vim, instead of 0, you get current line num
@@ -68,9 +76,8 @@ let g:ctrlp_arg_map = 1
 
 let mapleader = " "
 let g:mapleader = " "
-
-" set option (alt) to be meta in vim on osx
-set macmeta
+let maplocalleader = " "
+let g:maplocalleader = " "
 
 " Set hidden so I can switch buffers without saving
 set hidden
@@ -87,8 +94,8 @@ set ignorecase
 
 " Listchars
 " eol:␤,
-set listchars=trail:·,tab:→,
-set list
+" set listchars=trail:·,tab:→,
+" set list
 
 " iskeyword
 set isk+=-
@@ -98,6 +105,9 @@ set softtabstop=2
 set shiftwidth=2
 set expandtab
 set smarttab
+
+set linebreak
+set breakat=\ ^I!@*-+;:,./?
 
 " Open vertical splits on the right
 set splitright
@@ -142,10 +152,19 @@ let g:EasyMotion_leader_key = '<Leader>'
 set statusline=%f%m%r%h%w\ %{fugitive#statusline()}\ [%{&ff}]\ [TYPE=%Y]\ [PASTE=%{&paste}]\ [MOUSE=%{&mouse}]\ %=\ [%04l\|%04L:%04v]\ %P
 set laststatus=2
 
+" omnicomplete options
+set completeopt=longest,menuone,preview,noinsert
+
 " autocommands
 autocmd FileType javascript set softtabstop=2 shiftwidth=2
 autocmd FileType python set softtabstop=4 shiftwidth=4
 autocmd FileType make set noexpandtab softtabstop=8 shiftwidth=8
+autocmd BufEnter *.js.handlebars set ft=javascript
+autocmd BufEnter *.js.hbs set ft=javascript
+autocmd BufEnter *.as set ft=javascript
+autocmd BufEnter *.as setlocal mp=grunt
+autocmd BufEnter *.css.handlebars set ft=css
+autocmd BufEnter *.css.hbs set ft=css
 
 " Mappings
 " Add line above current line, return to normal mode and current line
@@ -162,6 +181,7 @@ noremap <Down> gj
 " space and backsapce to travel pagewise
 noremap <leader><BS> <PageUp>
 noremap <leader><Space> <PageDown>
+noremap <leader><S-Space> <PageUp>
 
 " bind to edit and reload vimrc
 map <leader>ve :VimrcEdit<CR>
@@ -192,9 +212,31 @@ map <leader>sc :SyntasticCheck<CR>
 map <leader>se :Errors<CR>
 
 " map FTs
-map <leader>js :set ft=javascript<CR>
-map <leader>ht :set ft=html<CR>
-map <leader>cs :set ft=css<CR>
+map <leader>fjs :set ft=javascript<CR>
+map <leader>fht :set ft=html<CR>
+map <leader>fcs :set ft=css<CR>
+
+" map fugitive
+map <leader>gs :Gstatus<CR>
+
+" map creating splits
+map <leader>vs :vsplit<CR>
+map <leader>ss :split<CR>
+
+" maps for ternjs
+inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+inoremap <expr> <C-x><C-o> pumvisible() ? '<C-x><C-o>' : '<C-x><C-o><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
+inoremap <expr> <C-n> pumvisible() ? '<C-n>' : '<C-n><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
+inoremap <expr> <M-,> pumvisible() ? '<C-n>' : '<C-x><C-o><C-n><C-p><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
+map <LocalLeader>tD   :TernDoc<CR>
+map <LocalLeader>tb   :TernDocBrowse<CR>
+map <LocalLeader>tt   :TernType<CR>
+map <LocalLeader>td   :TernDef<CR>
+map <LocalLeader>tpd  :TernDefPreview<CR>
+map <LocalLeader>tsd  :TernDefSplit<CR>
+map <LocalLeader>ttd  :TernDefTab<CR>
+map <LocalLeader>tr   :TernRefs<CR>
+map <LocalLeader>tR   :TernRename<CR>
 
 " commands
 " keep accidentally shifting Q and W
@@ -210,6 +252,8 @@ command! VimrcEdit :tabe $MYVIMRC
 let NERDTreeShowHidden=1
 let NERDTreeIgnore=['\~$', '.swp$[[file]]']
 
+let NERDSpaceDelims=1
+
 " ctrlp options
 let g:ctrlp_map = '<c-t>'
 let g:ctrlp_switch_buffer = 0
@@ -222,3 +266,15 @@ let delimitMate_expand_cr = 1
 let delimitMate_expand_space = 1
 let delimitMate_smart_quotes = 1
 let delimitMate_balance_matchpairs = 1
+
+" ternjs
+let tern_show_signature_in_pum = 1
+let tern_show_argument_hints = "on_hold"
+let tern_map_prefix = " "
+
+" taboo options
+set sessionoptions+=tabpages,globals
+
+" vim-whiplash options
+let g:WhiplashProjectsDir="~/p/"
+let g:WhiplashConfigDir="~/p/dotfiles/whiplash-config/"

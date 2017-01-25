@@ -9,7 +9,10 @@
 [color]
 	ui = true
 [alias]
+        branch-name = rev-parse --abbrev-ref HEAD
+        bn = rev-parse --abbrev-ref HEAD
 	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --
+	new = !"git log master..$(git branch-name) --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --"
 	st = status -sb
 	diffw = diff --word-diff
 	diffc = diff --cached
@@ -25,3 +28,15 @@
 	dcs = diff --cached --shortstat
 [http]
 	sslVerify = false
+[gist]
+	username = gkatsev
+	user = gkatsev
+[difftool "diffmerge"]
+	cmd = diffmerge \"$LOCAL\" \"$REMOTE\"
+[mergetool "diffmerge"]
+	cmd = "diffmerge --merge --result=\"$MERGED\" \"$LOCAL\" \"$(if test -f \"$BASE\"; then echo \"$BASE\"; else echo \"$LOCAL\"; fi)\" \"$REMOTE\""
+	trustExitCode = true
+[diff]
+	tool = diffmerge
+[merge]
+	tool = diffmerge
