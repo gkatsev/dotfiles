@@ -13,7 +13,7 @@ for file in $files; do
   fi
 done
 
-if [ ! -e $HOME/.config nvim ]
+if [ ! -e $HOME/.config/nvim ]
   then
     echo "Linking nvim"
     cmd="ln -s nvim $HOME/.config/nvim"
