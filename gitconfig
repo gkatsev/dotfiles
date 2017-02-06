@@ -4,7 +4,7 @@
 [github]
 	user = gkatsev
 [core]
-	editor = mvim -v
+	editor = nvim
 	excludesfile = ~/.gitignore
 [color]
 	ui = true
