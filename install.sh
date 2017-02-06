@@ -16,7 +16,7 @@ done
 if [ ! -e $HOME/.config/nvim ]
   then
     echo "Linking nvim"
-    cmd="ln -s nvim $HOME/.config/nvim"
+    cmd="ln -s `pwd`/nvim $HOME/.config/nvim"
     echo $cmd
     eval $cmd
   else
