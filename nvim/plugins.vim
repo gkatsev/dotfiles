@@ -62,6 +62,8 @@ Plug 'elzr/vim-json'
 Plug 'othree/jsdoc-syntax.vim'
 " writing plugin
 Plug 'reedes/vim-pencil'
+" nerdtree
+Plug 'scrooloose/nerdtree'
 " fzy plugin
 Plug 'cloudhead/neovim-fuzzy'
 
