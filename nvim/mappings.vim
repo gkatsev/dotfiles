@@ -31,4 +31,4 @@ map <leader>vs :vsplit<CR>
 map <leader>ss :split<CR>
 
 " redraw window
-noremap <C-l> :nohl<CR>:syntax sync fromstart<CR><C-l>
+noremap <C-l> :nohl<CR>:diffupdate<CR>:syntax sync fromstart<CR><C-l>
