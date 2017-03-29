@@ -32,3 +32,6 @@ map <leader>ss :split<CR>
 
 " redraw window
 noremap <C-l> :nohl<CR>:diffupdate<CR>:syntax sync fromstart<CR><C-l>
+
+" neovim-fuzzy command
+noremap <A-t> :FuzzyOpen<CR>

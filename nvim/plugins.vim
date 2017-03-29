@@ -62,6 +62,8 @@ Plug 'elzr/vim-json'
 Plug 'othree/jsdoc-syntax.vim'
 " writing plugin
 Plug 'reedes/vim-pencil'
+" fzy plugin
+Plug 'cloudhead/neovim-fuzzy'
 
 " Initialize plugin system
 call plug#end()
