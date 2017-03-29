@@ -54,8 +54,8 @@ Plug 'guileen/vim-node-dict'
 Plug 'aserebryakov/filestyle'
 " javascript syntax
 Plug 'othree/yajs.vim', { 'for': 'javascript' }
-" create a split based on visual selection
-Plug 'wellle/visual-split.vim'
+" scratch buffer with selection
+Plug 'chrisbra/NrrwRgn'
 " JSON syntax
 Plug 'elzr/vim-json'
 " jsdoc syntax
