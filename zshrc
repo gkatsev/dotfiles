@@ -53,6 +53,10 @@ gitpr() {
   git checkout $2
 }
 
+gitcleanprs() {
+  !git checkout master ; git for-each-ref refs/heads/pr/* --format="%(refname)" | while read ref ; do branch=${ref#refs/heads/} ; git branch -D $branch ; done
+}
+
 gitrevertpr() {
   git revert -m 1 $1
 }
