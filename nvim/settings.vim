@@ -3,10 +3,15 @@ syntax enable
 filetype plugin indent on
 
 " set colorscheme to solarized
-colorscheme solarized
-set t_Co=16
+if filereadable(expand("~/.vimrc_background"))
+  let base16colorspace=256
+  source ~/.vimrc_background
+endif
+
+colorscheme base16-solarized-dark
+" set t_Co=16
 set background=dark
-let g:solarized_termcolors=16
+" let g:solarized_termcolors=16
 
 " font
 if has('gui_macvim')
@@ -91,3 +96,8 @@ set laststatus=2
 " omnicomplete options
 set completeopt=longest,menuone,preview,noinsert
 
+" wildmode
+set wildmode=longest:full,full
+
+set spell
+set thesaurus+=~/.vim/mthesaur.txt

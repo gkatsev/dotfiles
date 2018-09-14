@@ -34,4 +34,4 @@ map <leader>ss :split<CR>
 noremap <C-l> :nohl<CR>:diffupdate<CR>:syntax sync fromstart<CR><C-l>
 
 " neovim-fuzzy command
-noremap <A-t> :FuzzyOpen<CR>
+noremap <leader>t :FuzzyOpen<CR>
