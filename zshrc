@@ -36,7 +36,7 @@ spacecompute() {
 
 servethis() {
   if (( $+commands[serve] )); then
-    serve -p 8000 -H -C --compress -F short
+    serve -p 8000 -C -c 0
   fi
 }
 
@@ -84,12 +84,43 @@ chpwd() {
 alias ls='ls -G'
 alias gut='git'
 
+
+BASE16_SHELL=$HOME/.config/base16-shell/
+[ -n "$PS1" ] && [ -s $BASE16_SHELL/profile_helper.sh ] && eval "$($BASE16_SHELL/profile_helper.sh)"
+base16_solarized-dark
+
+[ -s "/Users/gkatsevman/.nvm/nvm.sh" ] && . "/Users/gkatsevman/.nvm/nvm.sh" # This loads nvm
+
+autoload -U add-zsh-hook
+load-nvmrc() {
+  local node_version="$(nvm version)"
+  local nvmrc_path="$(nvm_find_nvmrc)"
+
+  if [ -n "$nvmrc_path" ]; then
+    local nvmrc_node_version=$(nvm version "$(cat "${nvmrc_path}")")
+
+    if [ "$nvmrc_node_version" = "N/A" ]; then
+      nvm install
+    elif [ "$nvmrc_node_version" != "$node_version" ]; then
+      nvm use
+    fi
+  elif [ "$node_version" != "$(nvm version default)" ]; then
+    echo "Reverting to nvm default version"
+    nvm use default
+  fi
+}
+add-zsh-hook chpwd load-nvmrc
+load-nvmrc
+
+PATH=$HOME/bin:/opt/homebrew/bin:/opt/android-sdk-macosx/platform-tools:/Users/gkatsevman/.rbenv/bin:/Users/gkatsevman/.gem/ruby/2.0.0/bin:$PATH
+PATH="/opt/homebrew/opt/qt/bin:$PATH"
+
 if [[ "$OSTYPE" =~ "^darwin.*" ]] then
-  alias e='mvim'
-  alias vi='vim'
-  alias vim="mvim -v"
+  alias e='nvim'
+  alias vi='nvim'
+  alias vim="nvim"
   alias zshconfigreload='. ~/.zshrc'
-  alias zshconfig="mvim -v ~/.zshrc"
+  alias zshconfig="nvim ~/.zshrc"
 
   alias canary="open -a /Applications/Google\ Chrome\ Canary.app/"
   alias chrome="canary"
@@ -99,9 +130,6 @@ if [[ "$OSTYPE" =~ "^darwin.*" ]] then
   export EDITOR=nvim
 
   #. /Users/gkatsevman/.nix-profile/etc/profile.d/nix.sh
+
+  launchctl setenv PATH $PATH
 fi
-
-
-[ -s "/Users/gkatsevman/.nvm/nvm.sh" ] && . "/Users/gkatsevman/.nvm/nvm.sh" # This loads nvm
-
-PATH=/opt/homebrew/bin:/opt/android-sdk-macosx/platform-tools:/Users/gkatsevman/.gem/ruby/2.0.0/bin:$PATH
