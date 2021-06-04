@@ -114,6 +114,8 @@ load-nvmrc
 
 PATH=$HOME/bin:/opt/homebrew/bin:/opt/android-sdk-macosx/platform-tools:/Users/gkatsevman/.rbenv/bin:/Users/gkatsevman/.gem/ruby/2.0.0/bin:$PATH
 PATH="/opt/homebrew/opt/qt/bin:$PATH"
+PATH="/Users/gkatsevman/Library/Python/2.7/bin":$PATH
+PATH="/Users/gkatsevman/Library/Python/3.7/bin":$PATH
 
 if [[ "$OSTYPE" =~ "^darwin.*" ]] then
   alias e='nvim'
@@ -131,5 +133,16 @@ if [[ "$OSTYPE" =~ "^darwin.*" ]] then
 
   #. /Users/gkatsevman/.nix-profile/etc/profile.d/nix.sh
 
+  export GIT_HTTP_BACKEND="/Library/Developer/CommandLineTools/usr/libexec/git-core/git-http-backend"
+
   launchctl setenv PATH $PATH
+
+  source ~/.iterm2_shell_integration.zsh
+  source ~/p/dotfiles/slowquit.sh
+  test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 fi
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -g ""'
+
