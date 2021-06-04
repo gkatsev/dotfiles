@@ -99,5 +99,4 @@ set completeopt=longest,menuone,preview,noinsert
 " wildmode
 set wildmode=longest:full,full
 
-set spell
 set thesaurus+=~/.vim/mthesaur.txt

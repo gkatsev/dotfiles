@@ -34,4 +34,24 @@ map <leader>ss :split<CR>
 noremap <C-l> :nohl<CR>:diffupdate<CR>:syntax sync fromstart<CR><C-l>
 
 " neovim-fuzzy command
-noremap <leader>t :FuzzyOpen<CR>
+noremap <leader>t :FZF<CR>
+
+" coc.nvim
+" https://github.com/neoclide/coc.nvim/wiki/Completion-with-sources#use-tab-or-custom-key-for-trigger-completion
+" use <tab> for trigger completion and navigate to the next complete item
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~ '\s'
+endfunction
+inoremap <silent><expr> <Tab>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<Tab>" :
+      \ coc#refresh()
+inoremap <silent><expr> <S-Tab>
+      \ pumvisible() ? "\<C-p>" :
+      \ <SID>check_back_space() ? "\<S-Tab>" :
+      \ coc#refresh()
+" use <c-space>for trigger completion
+inoremap <silent><expr> <c-space> coc#refresh()
+" use <cr> to grab the first selection
+inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm() : "\<C-g>u\<CR>"

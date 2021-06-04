@@ -26,6 +26,8 @@ Plug 'airblade/vim-gitgutter'
 Plug 'vim-scripts/YankRing.vim'
 " solarized colors
 Plug 'altercation/vim-colors-solarized'
+" solarized dark
+Plug 'chriskempson/base16-vim'
 " readline commands everywhere
 Plug 'tpope/vim-rsi'
 " surround things with other things
@@ -41,7 +43,8 @@ Plug 'tpope/vim-jdaddy'
 " commenting plugin
 Plug 'tomtom/tcomment_vim'
 " matchit
-Plug 'matchit.zip'
+" Plug 'vim-scripts/matchit.zip'
+Plug 'andymass/vim-matchup'
 " bufexplorer
 Plug 'jlanzarotta/bufexplorer'
 " ack plugin
@@ -66,6 +69,13 @@ Plug 'reedes/vim-pencil'
 Plug 'scrooloose/nerdtree'
 " fzy plugin
 Plug 'cloudhead/neovim-fuzzy'
+" fzf plugin
+Plug '/opt/homebrew/opt/fzf'
+" fzf.vim
+Plug 'junegunn/fzf.vim'
+" coc.vim completion
+Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
+
 
 " Initialize plugin system
 call plug#end()
