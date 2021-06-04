@@ -9,8 +9,18 @@
 [color]
 	ui = true
 [alias]
-        branch-name = rev-parse --abbrev-ref HEAD
-        bn = rev-parse --abbrev-ref HEAD
+	pushf = push --force-with-lease
+	pusht = push --follow-tags
+	pf = push --force-with-lease
+	pt = push --follow-tags
+	po = push origin
+	pu = push upstream
+	puo = push -u origin
+	puu = push -u upstream
+	pto = push --follow-tags origin
+	ptu = push --follow-tags upstream
+	branch-name = rev-parse --abbrev-ref HEAD
+	bn = rev-parse --abbrev-ref HEAD
 	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --
 	new = !"git log master..$(git branch-name) --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --"
 	st = status -sb
@@ -18,12 +28,18 @@
 	diffc = diff --cached
 	diffcw = diff --cached --word-diff
 	diffwc = diff --cached --word-diff
+	dw = diff --word-diff
+	dc = diff --cached
+	dcw = diff --cached --word-diff
+	dwc = diff --cached --word-diff
 	assume = update-index --assume-unchanged
 	unassume = update-index --no-assume-unchanged
 	assumed = !git ls-files -v | grep ^h | cut -c 3-
 	co = checkout
 	standup = log --since yesterday --oneline
 	ru = remote update
+	rom = rebase origin/main
+	rum = rebase upstream/main
 	ds = diff --shortstat
 	dcs = diff --cached --shortstat
 [http]
@@ -37,6 +53,10 @@
 	cmd = "diffmerge --merge --result=\"$MERGED\" \"$LOCAL\" \"$(if test -f \"$BASE\"; then echo \"$BASE\"; else echo \"$LOCAL\"; fi)\" \"$REMOTE\""
 	trustExitCode = true
 [diff]
-	tool = diffmerge
+	tool = opendiff
+	tool = opendiff
 [merge]
 	tool = diffmerge
+[merge "npm-merge-driver"]
+	name = automatically merge npm lockfiles
+	driver = npx npm-merge-driver merge %A %O %B %P
