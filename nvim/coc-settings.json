@@ -1,0 +1,15 @@
+{
+  "tsserver.formatOnType": false,
+  "tsserver.reportStyleChecksAsWarnings": false,
+  "typescript.updateImportsOnFileMove.enable": false,
+  "typescript.implementationsCodeLens.enable": false,
+  "typescript.validate.enable": false,
+  "javascript.updateImportsOnFileMove.enable": false,
+  "javascript.implementationsCodeLens.enable": false,
+  "javascript.validate.enable": false,
+  "javascript.suggestionActions.enabled": false,
+  "javascript.suggest.autoImports": false,
+  "html.format.enable": false,
+  "html.validate.html": false,
+  "html.validate.scripts": false
+}
