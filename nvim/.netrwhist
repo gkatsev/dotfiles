@@ -1,0 +1,12 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =0
+let g:netrw_dirhist_0='/Users/gkatsevman/p/videojs-ima3'
+let g:netrw_dirhist_9='/Users/gkatsevman/p/video.js'
+let g:netrw_dirhist_8='/Users/gkatsevman/p/http-streaming'
+let g:netrw_dirhist_7='/Users/gkatsevman/p/video.js/test'
+let g:netrw_dirhist_6='/Users/gkatsevman/p/videojs-contrib-dash-clean'
+let g:netrw_dirhist_5='/Users/gkatsevman/p/video.js/src/js/utils'
+let g:netrw_dirhist_4='/Users/gkatsevman/p/video.js/src/js'
+let g:netrw_dirhist_3='/Users/gkatsevman/p/mux.js/test'
+let g:netrw_dirhist_2='/Users/gkatsevman/p/video.js/dist'
+let g:netrw_dirhist_1='/Users/gkatsevman/p/http-streaming/src'

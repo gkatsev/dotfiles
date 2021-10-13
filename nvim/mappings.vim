@@ -55,3 +55,29 @@ inoremap <silent><expr> <S-Tab>
 inoremap <silent><expr> <c-space> coc#refresh()
 " use <cr> to grab the first selection
 inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm() : "\<C-g>u\<CR>"
+
+" https://www.youtube.com/watch?v=hSHATqh8svM
+" yank to end of line
+nnoremap Y y$
+
+" keep n,N, and J centered
+nnoremap n nzzzv
+nnoremap N Nzzzv
+nnoremap J mzJ`z
+
+" undo breakpoints
+inoremap , ,<c-g>u
+inoremap . .<c-g>u
+inoremap ! !<c-g>u
+inoremap ? ?<c-g>u
+inoremap ( (<c-g>u
+inoremap ) )<c-g>u
+inoremap { {<c-g>u
+inoremap } }<c-g>u
+inoremap > ><c-g>u
+inoremap < <<c-g>u
+inoremap = =<c-g>u
+
+" add extra jump lists
+nnoremap <expr> k (v:count > 5 ? "m'" . v:count : "") . 'k'
+nnoremap <expr> j (v:count > 5 ? "m'" . v:count : "") . 'j'
