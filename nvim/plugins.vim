@@ -67,12 +67,12 @@ Plug 'othree/jsdoc-syntax.vim'
 Plug 'reedes/vim-pencil'
 " nerdtree
 Plug 'scrooloose/nerdtree'
-" fzy plugin
-Plug 'cloudhead/neovim-fuzzy'
-" fzf plugin
+" fzf plugin, homebrew
 Plug '/opt/homebrew/opt/fzf'
+" fzf plugin, git
+Plug '~/.fzf'
 " fzf.vim
-Plug 'junegunn/fzf.vim'
+Plug 'junegunn/fzf.vim', {'do': { -> fzf#install()}}
 " coc.vim completion
 Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
 
