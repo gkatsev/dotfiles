@@ -98,6 +98,8 @@ if [ -s "$BASE16_SHELL" ]; then
 fi
 
 [ -s "/Users/gkatsevman/.nvm/nvm.sh" ] && . "/Users/gkatsevman/.nvm/nvm.sh" # This loads nvm
+[ -s "/home/gkatsev/.nvm/nvm.sh" ] && . "/home/gkatsev/.nvm/nvm.sh" # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 autoload -U add-zsh-hook
 load-nvmrc() {
@@ -149,7 +151,6 @@ if [[ "$OSTYPE" =~ "^darwin.*" ]] then
   source ~/p/dotfiles/slowquit.sh
   test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 fi
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -g ""'
