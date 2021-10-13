@@ -127,12 +127,13 @@ PATH="/opt/homebrew/opt/qt/bin:$PATH"
 PATH=$PATH:"/Users/gkatsevman/Library/Python/2.7/bin"
 PATH=$PATH:"/Users/gkatsevman/Library/Python/3.7/bin"
 
+alias e='nvim'
+alias vi='nvim'
+alias vim="nvim"
+alias zshconfigreload='. ~/.zshrc'
+alias zshconfig="nvim ~/.zshrc"
+
 if [[ "$OSTYPE" =~ "^darwin.*" ]] then
-  alias e='nvim'
-  alias vi='nvim'
-  alias vim="nvim"
-  alias zshconfigreload='. ~/.zshrc'
-  alias zshconfig="nvim ~/.zshrc"
 
   alias canary="open -a /Applications/Google\ Chrome\ Canary.app/"
   alias chrome="canary"
