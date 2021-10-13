@@ -120,8 +120,8 @@ load-nvmrc
 
 PATH=$HOME/bin:/opt/homebrew/bin:/opt/android-sdk-macosx/platform-tools:/Users/gkatsevman/.rbenv/bin:/Users/gkatsevman/.gem/ruby/2.0.0/bin:$PATH
 PATH="/opt/homebrew/opt/qt/bin:$PATH"
-PATH="/Users/gkatsevman/Library/Python/2.7/bin":$PATH
-PATH="/Users/gkatsevman/Library/Python/3.7/bin":$PATH
+PATH=$PATH:"/Users/gkatsevman/Library/Python/2.7/bin"
+PATH=$PATH:"/Users/gkatsevman/Library/Python/3.7/bin"
 
 if [[ "$OSTYPE" =~ "^darwin.*" ]] then
   alias e='nvim'
