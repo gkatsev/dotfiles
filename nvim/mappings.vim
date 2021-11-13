@@ -23,9 +23,6 @@ map <leader>fjs :set ft=javascript<CR>
 map <leader>fht :set ft=html<CR>
 map <leader>fcs :set ft=css<CR>
 
-" map fugitive
-map <leader>gs :Gstatus<CR>
-
 " map creating splits
 map <leader>vs :vsplit<CR>
 map <leader>ss :split<CR>
@@ -35,6 +32,7 @@ noremap <C-l> :nohl<CR>:diffupdate<CR>:syntax sync fromstart<CR><C-l>
 
 " neovim-fuzzy command
 noremap <leader>t :FZF<CR>
+noremap <leader>g :Ag<CR>
 
 " coc.nvim
 " https://github.com/neoclide/coc.nvim/wiki/Completion-with-sources#use-tab-or-custom-key-for-trigger-completion
