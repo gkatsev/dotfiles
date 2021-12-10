@@ -36,6 +36,7 @@
 	unassume = update-index --no-assume-unchanged
 	assumed = !git ls-files -v | grep ^h | cut -c 3-
 	co = checkout
+	cm = commit -m
 	standup = log --since yesterday --oneline
 	ru = remote update
 	rom = rebase origin/main
