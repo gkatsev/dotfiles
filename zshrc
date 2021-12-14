@@ -156,5 +156,7 @@ fi
 # export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -g ""'
 
+export LESS=RiXj.5
+
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
