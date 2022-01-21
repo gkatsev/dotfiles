@@ -29,8 +29,8 @@ if [[ "$OSTYPE" =~ "^linux-*" ]] then
   sudo apt install silversearcher-ag shellcheck
 # on macos
 elif [[ "$OSTYPE" =~ "^darwin.*" ]] then
-  echo "Installing ag and shellcheck"
-  brew install the_sliver_searcher shellcheck
+  echo "Installing ag, shellcheck, fzf, neovim"
+  brew install the_sliver_searcher shellcheck fzf neovim
 fi
 
 # install fzf
