@@ -17,3 +17,4 @@ Install:
 brew.sh
 nvm.sh
 iterm2 shell integration for zsh https://iterm2.com/documentation-shell-integration.html
+`npm i -g yarn@1` *before* opening neovim, otherwise, run `exec coc#util#install()` https://github.com/neoclide/coc.nvim/issues/3308
