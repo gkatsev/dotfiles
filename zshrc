@@ -135,6 +135,9 @@ alias zshconfig="nvim ~/.zshrc"
 
 if [[ "$OSTYPE" =~ "^darwin.*" ]] then
 
+  # homebrew
+  eval "$(/opt/homebrew/bin/brew shellenv)"
+
   alias canary="open -a /Applications/Google\ Chrome\ Canary.app/"
   alias chrome="canary"
   alias chromes="open -a /Applications/Google\ Chrome.app/"
