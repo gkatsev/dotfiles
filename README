@@ -11,3 +11,9 @@ There is a dotfile for:
 .zshrc
 
 To install these, you should clone the directory, and then update the git submodules `git submodules update --recursive`. Afterwards, there's an install script that symlinks all these files and directories if these files do not already exist.
+
+
+Install:
+brew.sh
+nvm.sh
+iterm2 shell integration for zsh https://iterm2.com/documentation-shell-integration.html
