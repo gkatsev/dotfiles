@@ -18,3 +18,9 @@ brew.sh
 nvm.sh
 iterm2 shell integration for zsh https://iterm2.com/documentation-shell-integration.html
 `npm i -g yarn@1` *before* opening neovim, otherwise, run `exec coc#util#install()` https://github.com/neoclide/coc.nvim/issues/3308
+
+Solarized Dark with iTerm2:
+Either use this patched color
+https://github.com/mbadolato/iTerm2-Color-Schemes/blob/master/schemes/Solarized%20Dark%20-%20Patched.itermcolors
+
+Or increase contrast to 30
