@@ -30,7 +30,11 @@ if [[ "$OSTYPE" =~ "^linux-*" ]] then
 # on macos
 elif [[ "$OSTYPE" =~ "^darwin.*" ]] then
   echo "Installing ag, shellcheck, fzf, neovim"
-  brew install the_sliver_searcher shellcheck fzf neovim
+  brew install the_silver_searcher
+  brew install shellcheck
+  brew install fzf
+  brew install neovim
+  brew install gh
 fi
 
 # install fzf
