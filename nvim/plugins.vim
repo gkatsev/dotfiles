@@ -12,7 +12,8 @@ call plug#begin('~/.local/share/nvim/plugged')
 " let g:plug_url_format = 'git@github.com:%s.git'
 
 " simple project management
-Plug 'arkwright/vim-whiplash'
+" Plug 'arkwright/vim-whiplash'
+Plug 'gkatsev/vim-whiplash'
 " tab bar renaming
 Plug 'gcmt/taboo.vim'
 
