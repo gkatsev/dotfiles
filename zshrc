@@ -37,6 +37,8 @@ spacecompute() {
 servethis() {
   if (( $+commands[serve] )); then
     serve -p 8000 -C -c 0
+  elif (( $+commands[http-server] )) then
+    http-server -p 8000 --cors -c-1
   fi
 }
 
