@@ -41,6 +41,7 @@
 	ru = remote update
 	rom = rebase origin/main
 	rum = rebase upstream/main
+	pom = push origin main
 	ds = diff --shortstat
 	dcs = diff --cached --shortstat
 [http]
