@@ -122,7 +122,7 @@ load-nvmrc() {
   fi
 }
 add-zsh-hook chpwd load-nvmrc
-load-nvmrc
+# load-nvmrc
 
 PATH=$HOME/bin:/opt/homebrew/bin:/opt/android-sdk-macosx/platform-tools:/Users/gkatsevman/.rbenv/bin:/Users/gkatsevman/.gem/ruby/2.0.0/bin:$PATH
 PATH="/opt/homebrew/opt/qt/bin:$PATH"
