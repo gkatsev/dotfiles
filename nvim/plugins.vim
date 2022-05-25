@@ -61,7 +61,7 @@ Plug 'aserebryakov/filestyle'
 " javascript syntax
 Plug 'othree/yajs.vim', { 'for': 'javascript' }
 " scratch buffer with selection
-Plug 'chrisbra/NrrwRgn'
+" Plug 'chrisbra/NrrwRgn'
 " JSON syntax
 Plug 'elzr/vim-json'
 " jsdoc syntax

@@ -79,3 +79,7 @@ inoremap = =<c-g>u
 " add extra jump lists
 " nnoremap <expr> k (v:count > 5 ? "m'" . v:count : "") . 'k'
 " nnoremap <expr> j (v:count > 5 ? "m'" . v:count : "") . 'j'
+
+" NERDTree find current file
+noremap <leader>nr :NERDTreeFind<cr>
+noremap <leader>nt :NERDTreeFocus<cr><C-W>p

@@ -14,3 +14,6 @@ let g:NERDTreeShowLineNumbers = 1
 let g:NERDTreeMinimalUI = 1
 let g:NERDTreeNaturalSort = 1
 let g:NERDtreeWinSize = 25
+
+" elzr/vim-json optoins
+let g:vim_json_syntax_conceal = 0
