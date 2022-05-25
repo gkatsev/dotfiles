@@ -3,12 +3,23 @@ syntax enable
 filetype plugin indent on
 
 " set colorscheme to solarized
-if filereadable(expand("~/.vimrc_background"))
-  let base16colorspace=256
-  source ~/.vimrc_background
-endif
+" if filereadable(expand("~/.vimrc_background"))
+"   let base16colorspace=256
+"   source ~/.vimrc_background
+" endif
 
-colorscheme base16-solarized-dark
+set termguicolors
+
+let g:gruvbox_contrast_dark = 'hard'
+let g:gruvbox_italic = 1
+let g:gruvbox_italicize_strings = 0
+let g:gruvbox_vert_split = 'bg3'
+let g:gruvbox_invert_selection = 1
+let g:gruvbox_improved_strings = 1
+let g:gruvbox_improved_warnings = 1
+
+" colorscheme base16-solarized-dark
+colorscheme gruvbox
 " set t_Co=16
 set background=dark
 " let g:solarized_termcolors=16

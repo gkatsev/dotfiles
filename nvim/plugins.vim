@@ -27,7 +27,9 @@ Plug 'airblade/vim-gitgutter'
 Plug 'vim-scripts/YankRing.vim'
 " solarized colors
 Plug 'altercation/vim-colors-solarized'
-" solarized dark
+" gruvbox
+Plug 'gruvbox-community/gruvbox'
+" " solarized dark
 Plug 'chriskempson/base16-vim'
 " readline commands everywhere
 Plug 'tpope/vim-rsi'
