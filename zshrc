@@ -124,6 +124,7 @@ load-nvmrc() {
 add-zsh-hook chpwd load-nvmrc
 # load-nvmrc
 
+PATH=/opt/homebrew/opt/ruby/bin:/opt/homebrew/lib/ruby/gems/3.1.0/bin:$PATH
 PATH=$HOME/bin:/opt/homebrew/bin:/opt/android-sdk-macosx/platform-tools:/Users/gkatsevman/.rbenv/bin:/Users/gkatsevman/.gem/ruby/2.0.0/bin:$PATH
 PATH="/opt/homebrew/opt/qt/bin:$PATH"
 PATH=$PATH:"/Users/gkatsevman/Library/Python/2.7/bin"
@@ -139,6 +140,7 @@ if [[ "$OSTYPE" =~ "^darwin.*" ]] then
 
   # homebrew
   eval "$(/opt/homebrew/bin/brew shellenv)"
+  alias ibrew='arch -x86_64 /usr/local/bin/brew'
 
   alias canary="open -a /Applications/Google\ Chrome\ Canary.app/"
   alias chrome="canary"
