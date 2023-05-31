@@ -77,7 +77,7 @@ Plug '~/.fzf'
 " fzf.vim
 Plug 'junegunn/fzf.vim', {'do': { -> fzf#install()}}
 " coc.vim completion
-Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
+Plug 'neoclide/coc.nvim', {'branch': 'release', 'do': { -> coc#util#install()}}
 
 
 " Initialize plugin system

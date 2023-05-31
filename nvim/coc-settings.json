@@ -1,4 +1,5 @@
 {
+  "suggest.noselect": true,
   "tsserver.formatOnType": false,
   "tsserver.reportStyleChecksAsWarnings": false,
   "typescript.updateImportsOnFileMove.enable": false,
@@ -11,5 +12,8 @@
   "javascript.suggest.autoImports": false,
   "html.format.enable": false,
   "html.validate.html": false,
-  "html.validate.scripts": false
+  "html.validate.scripts": false,
+  "html.customData": [
+    "./dist/vscode.html-custom-data.json"
+  ]
 }

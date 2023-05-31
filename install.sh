@@ -1,6 +1,6 @@
 #!/usr/bin/env zsh
 
-files="gitconfig"
+files="gitconfig-work"
 for file in $files; do
   if [ ! -e $HOME/.$file ]
   then
@@ -35,6 +35,7 @@ elif [[ "$OSTYPE" =~ "^darwin.*" ]] then
   brew install fzf
   brew install neovim
   brew install gh
+  brew install fd
 fi
 
 # install fzf

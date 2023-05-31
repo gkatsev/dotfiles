@@ -1,3 +1,4 @@
+# zmodload zsh/zprof
 ######
 # The following lines were added by compinstall
 
@@ -85,8 +86,17 @@ triforce() {
 chpwd() {
   cwd=`pwd | sed -E "s_${HOME}/?_~/_"`
   echo -ne "\e]1;$cwd\a"
+  [ -s "./yarn.lock" ] && echo "This project uses yarn!"
   unset home
   unset cwd
+}
+
+isyarn() {
+  if [ -s "./yarn.lock" ]; then
+    echo "yarn"
+  else
+    echo "npm"
+  fi
 }
 
 alias ls='ls -G'
@@ -149,6 +159,8 @@ if [[ "$OSTYPE" =~ "^darwin.*" ]] then
 
   export EDITOR=nvim
 
+  export GPG_TTY=$(tty)
+
   #. /Users/gkatsevman/.nix-profile/etc/profile.d/nix.sh
 
   export GIT_HTTP_BACKEND="/Library/Developer/CommandLineTools/usr/libexec/git-core/git-http-backend"
@@ -162,8 +174,12 @@ fi
 
 # export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -g ""'
+export FZF_ALT_C_COMMAND='fd --exclude node_modules --exclude .git --exclude .npm --exclude Library'
+export FZF_CTRL_T_COMMAND='fd --exclude node_modules --exclude .git --exclude .npm --exclude Library'
+export FZF_ALT_C_OPTS="--preview 'tree -C {} | head -200'"
 
 export LESS=RiXj.5
 
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+# zprof

@@ -113,4 +113,4 @@ set wildmode=longest:full,full
 set thesaurus+=~/.vim/mthesaur.txt
 
 " when looking up a file with gf, look for it with these suffixes if not found
-set suffixesadd+=.js,.ts
+set suffixesadd+=.js,.ts,.d.ts
