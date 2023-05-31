@@ -62,3 +62,10 @@
 [merge "npm-merge-driver"]
 	name = automatically merge npm lockfiles
 	driver = npx npm-merge-driver merge %A %O %B %P
+[init]
+	defaultBranch = main
+
+[includeIf "hasconfig:remote.*.url:*github.com:xxxxx/**"]
+	path = .gitconfig-work
+[includeIf "hasconfig:remote.*.url:*github.com/xxxxx/**"]
+	path = .gitconfig-work

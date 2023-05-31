@@ -1,0 +1,5 @@
+[user]
+	email = xxxxx
+	signingkey = xxxxx
+[commit]
+	gpgsign = true
