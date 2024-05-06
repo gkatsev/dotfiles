@@ -70,8 +70,10 @@ Plug 'othree/jsdoc-syntax.vim'
 Plug 'reedes/vim-pencil'
 " nerdtree
 Plug 'scrooloose/nerdtree'
-" fzf plugin, homebrew
-Plug '/opt/homebrew/opt/fzf'
+" if has('macunix')
+"   " fzf plugin, homebrew
+"   Plug '/opt/homebrew/opt/fzf'
+" endif
 " fzf plugin, git
 Plug '~/.fzf'
 " fzf.vim

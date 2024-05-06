@@ -42,17 +42,17 @@ function! s:check_back_space() abort
   return !col || getline('.')[col - 1]  =~ '\s'
 endfunction
 inoremap <silent><expr> <Tab>
-      \ pumvisible() ? "\<C-n>" :
+      \ coc#pum#visible() ? coc#pum#next(1) :
       \ <SID>check_back_space() ? "\<Tab>" :
       \ coc#refresh()
 inoremap <silent><expr> <S-Tab>
-      \ pumvisible() ? "\<C-p>" :
+      \ coc#pum#visible() ? coc#pum#prev(1) :
       \ <SID>check_back_space() ? "\<S-Tab>" :
       \ coc#refresh()
 " use <c-space>for trigger completion
 inoremap <silent><expr> <c-space> coc#refresh()
 " use <cr> to grab the first selection
-inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm() : "\<C-g>u\<CR>"
+inoremap <silent><expr> <cr> coc#pum#visible() ? coc#_select_confirm() : "\<C-g>u\<CR>"
 
 " https://www.youtube.com/watch?v=hSHATqh8svM
 " yank to end of line
