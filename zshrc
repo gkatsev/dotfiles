@@ -99,8 +99,9 @@ if [ -s "$BASE16_SHELL" ]; then
   base16_solarized-dark
 fi
 
-[ -s "/Users/gkatsevman/.nvm/nvm.sh" ] && . "/Users/gkatsevman/.nvm/nvm.sh" # This loads nvm
-[ -s "/home/gkatsev/.nvm/nvm.sh" ] && . "/home/gkatsev/.nvm/nvm.sh" # This loads nvm
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 autoload -U add-zsh-hook
@@ -155,7 +156,7 @@ if [[ "$OSTYPE" =~ "^darwin.*" ]] then
 
   launchctl setenv PATH $PATH
 
-  source ~/.iterm2_shell_integration.zsh
+  # [ -s "$HOME/.iterm2_shell_integration.zsh" ] source ~/.iterm2_shell_integration.zsh
   source ~/p/dotfiles/slowquit.sh
   test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 fi
