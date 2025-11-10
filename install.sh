@@ -1,6 +1,6 @@
 #!/usr/bin/env zsh
 
-files="gitconfig-work"
+files="wezterm.lua"
 for file in $files; do
   if [ ! -e $HOME/.$file ]
   then
@@ -36,6 +36,8 @@ elif [[ "$OSTYPE" =~ "^darwin.*" ]] then
   brew install neovim
   brew install gh
   brew install fd
+  brew install --cask wezterm@nightly
+	brew install zsh-autosuggestions zsh-fast-syntax-highlighting zsh-completions
 fi
 
 # install fzf

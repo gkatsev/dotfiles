@@ -17,3 +17,7 @@ let g:NERDtreeWinSize = 25
 
 " elzr/vim-json optoins
 let g:vim_json_syntax_conceal = 0
+
+" bufExplorer
+let g:bufExplorerShowTabBuffer=1        " Yes.
+let g:bufExplorerSplitOutPathName=1  " Split the path and file name.

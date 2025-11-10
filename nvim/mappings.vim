@@ -84,3 +84,7 @@ inoremap = =<c-g>u
 " NERDTree find current file
 noremap <leader>nr :NERDTreeFind<cr>
 noremap <leader>nt :NERDTreeFocus<cr><C-W>p
+
+" precognition.nvim
+noremap <leader>pp :lua require("precognition").peek()<CR>
+noremap <leader>pt :lua require("precognition").toggle()<CR>

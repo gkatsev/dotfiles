@@ -19,18 +19,20 @@ Plug 'gcmt/taboo.vim'
 
 " unlet g:plug_url_format
 
-" handlebars/mustache plugin
-Plug 'mustache/vim-mustache-handlebars'
+" " handlebars/mustache plugin
+" Plug 'mustache/vim-mustache-handlebars'
 " add add/remove/change icons in the gutter
 Plug 'airblade/vim-gitgutter'
 " copy ring
 Plug 'vim-scripts/YankRing.vim'
 " solarized colors
 Plug 'altercation/vim-colors-solarized'
-" gruvbox
-Plug 'gruvbox-community/gruvbox'
-" " solarized dark
-Plug 'chriskempson/base16-vim'
+" " gruvbox
+" Plug 'gruvbox-community/gruvbox'
+" Plug 'luisiacc/gruvbox-baby', {'branch': 'main'}
+Plug 'ellisonleao/gruvbox.nvim'
+" " " solarized dark
+" Plug 'chriskempson/base16-vim'
 " readline commands everywhere
 Plug 'tpope/vim-rsi'
 " surround things with other things
@@ -39,10 +41,10 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fugitive'
 " github plugin for fugitive
 Plug 'tpope/vim-rhubarb'
-" markdown plugin
-Plug 'tpope/vim-markdown'
-" json text object plugin
-Plug 'tpope/vim-jdaddy'
+" " markdown plugin
+" Plug 'tpope/vim-markdown'
+" " json text object plugin
+" Plug 'tpope/vim-jdaddy'
 " commenting plugin
 Plug 'tomtom/tcomment_vim'
 " matchit
@@ -52,22 +54,24 @@ Plug 'andymass/vim-matchup'
 Plug 'jlanzarotta/bufexplorer'
 " ack plugin
 Plug 'mileszs/ack.vim'
-" node plugin
-Plug 'moll/vim-node'
+" " node plugin
+" Plug 'moll/vim-node'
 " node dict plugin
 Plug 'guileen/vim-node-dict'
 " show trailing whitespace and tabs
 Plug 'aserebryakov/filestyle'
 " javascript syntax
-Plug 'othree/yajs.vim', { 'for': 'javascript' }
+" Plug 'othree/yajs.vim', { 'for': 'javascript' }
+" treesitter, syntax highlighting for things
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 " scratch buffer with selection
 " Plug 'chrisbra/NrrwRgn'
-" JSON syntax
-Plug 'elzr/vim-json'
-" jsdoc syntax
-Plug 'othree/jsdoc-syntax.vim'
-" writing plugin
-Plug 'reedes/vim-pencil'
+" " JSON syntax
+" Plug 'elzr/vim-json'
+" " jsdoc syntax
+" Plug 'othree/jsdoc-syntax.vim'
+" " writing plugin
+" Plug 'reedes/vim-pencil'
 " nerdtree
 Plug 'scrooloose/nerdtree'
 " fzf plugin, homebrew
@@ -78,7 +82,8 @@ Plug '~/.fzf'
 Plug 'junegunn/fzf.vim', {'do': { -> fzf#install()}}
 " coc.vim completion
 Plug 'neoclide/coc.nvim', {'branch': 'release', 'do': { -> coc#util#install()}}
-
+" " precognition.nvim helps show available motions
+" Plug 'tris203/precognition.nvim'
 
 " Initialize plugin system
 call plug#end()

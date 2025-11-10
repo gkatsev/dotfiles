@@ -1,12 +1,12 @@
-autocmd FileType javascript set softtabstop=2 shiftwidth=2
-autocmd FileType html set softtabstop=2 shiftwidth=2
-autocmd FileType python set softtabstop=4 shiftwidth=4
-autocmd FileType make set noexpandtab softtabstop=8 shiftwidth=8
+autocmd FileType javascript set softtabstop=2 shiftwidth=2 expandtab
+" autocmd FileType html set softtabstop=2 shiftwidth=2
+" autocmd FileType python set softtabstop=4 shiftwidth=4
+" autocmd FileType make set noexpandtab softtabstop=8 shiftwidth=8
 autocmd FileType * setlocal nospell
-autocmd FileType markdown setlocal spell softtabstop=2 shiftwidth=2
+" autocmd FileType markdown setlocal spell softtabstop=2 shiftwidth=2
 autocmd BufEnter *.js.handlebars set ft=javascript
 autocmd BufEnter *.js.hbs set ft=javascript
-autocmd BufEnter *.ts set ft=javascript
+autocmd BufEnter *.ts set ft=typescript
 autocmd BufEnter *.mdx set ft=markdown.javascriptreact
 autocmd BufEnter *.astro set ft=javascriptreact
 autocmd BufEnter *.as set ft=javascript

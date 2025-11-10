@@ -21,15 +21,24 @@ compinit
 HISTFILE=~/.zhistory
 HISTSIZE=999999
 SAVEHIST=999999
-setopt appendhistory
+setopt sharehistory
+setopt hist_expire_dups_first
+setopt hist_ignore_dups
+setopt hist_verify
+setopt hist_ignore_space
 unsetopt beep
 bindkey -e
 # End of lines configured by zsh-newuser-install
 ######
 
+# search history up and down
+bindkey '^[[A' history-search-backward
+bindkey '^[[B' history-search-forward
+
 autoload -U promptinit
 promptinit
 prompt adam2
+setopt prompt_sp
 
 spacecompute() {
   ssh -t gkatsev@spacecompute.com screen -xRR
@@ -39,7 +48,7 @@ servethis() {
   if (( $+commands[serve] )); then
     serve -p 8000 -C -c 0
   elif (( $+commands[http-server] )) then
-    http-server -p 8000 --cors -c-1
+    http-server -p 8888 --cors -c-1
   fi
 }
 
@@ -109,8 +118,12 @@ if [ -s "$BASE16_SHELL" ]; then
   base16_solarized-dark
 fi
 
-[ -s "/Users/gkatsevman/.nvm/nvm.sh" ] && . "/Users/gkatsevman/.nvm/nvm.sh" # This loads nvm
-[ -s "/home/gkatsev/.nvm/nvm.sh" ] && . "/home/gkatsev/.nvm/nvm.sh" # This loads nvm
+if [[ "$OSTYPE" =~ "^darwin.*" ]] then
+  [ -s "$HOME/.nvm/nvm.sh" ] && . "$HOME/.nvm/nvm.sh" # This loads nvm
+else
+  [ -s "/Users/gkatsevman/.nvm/nvm.sh" ] && . "/Users/gkatsevman/.nvm/nvm.sh" # This loads nvm
+  [ -s "/home/gkatsev/.nvm/nvm.sh" ] && . "/home/gkatsev/.nvm/nvm.sh" # This loads nvm
+fi
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 autoload -U add-zsh-hook
@@ -135,16 +148,21 @@ add-zsh-hook chpwd load-nvmrc
 # load-nvmrc
 
 PATH=/opt/homebrew/opt/ruby/bin:/opt/homebrew/lib/ruby/gems/3.1.0/bin:$PATH
-PATH=$HOME/bin:/opt/homebrew/bin:/opt/android-sdk-macosx/platform-tools:/Users/gkatsevman/.rbenv/bin:/Users/gkatsevman/.gem/ruby/2.0.0/bin:$PATH
+PATH=$HOME/bin::/opt/homebrew/bin:/opt/android-sdk-macosx/platform-tools:/Users/gkatsevman/.rbenv/bin:/Users/gkatsevman/.gem/ruby/2.0.0/bin:$PATH
+PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
+PATH=$PATH:$HOME/tizen-studio/tools/ide/bin:$HOME/tizen-studio/tools/ide/bin/tizen:$HOME/tizen-studio/tools
 PATH="/opt/homebrew/opt/qt/bin:$PATH"
 PATH=$PATH:"/Users/gkatsevman/Library/Python/2.7/bin"
 PATH=$PATH:"/Users/gkatsevman/Library/Python/3.7/bin"
+CPPFLAGS="-I/opt/homebrew/opt/openjdk/include"
+for d in $HOME/bin/*; do PATH="$PATH:$d"; done
 
 alias e='nvim'
 alias vi='nvim'
 alias vim="nvim"
 alias zshconfigreload='. ~/.zshrc'
 alias zshconfig="nvim ~/.zshrc"
+alias agts="ag --ts --js --ignore '*.spec.ts*' --ignore '*.mock.[jt]s*' --ignore '*.d.[jt]s*' --ignore dist --ignore node_modules"
 
 if [[ "$OSTYPE" =~ "^darwin.*" ]] then
 
@@ -167,9 +185,11 @@ if [[ "$OSTYPE" =~ "^darwin.*" ]] then
 
   launchctl setenv PATH $PATH
 
-  source ~/.iterm2_shell_integration.zsh
   source ~/p/dotfiles/slowquit.sh
   test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
+  ssh-add --apple-use-keychain ~/.ssh/id_ed25519
+  ssh-add --apple-use-keychain ~/.ssh/id_ed25519_nbcu
 fi
 
 # export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
@@ -182,4 +202,19 @@ export LESS=RiXj.5
 
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+# Set up fzf key bindings and fuzzy completion
+source <(fzf --zsh)
 # zprof
+
+source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+source /opt/homebrew/opt/zsh-fast-syntax-highlighting/share/zsh-fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
+source /opt/homebrew/share/zsh-you-should-use/you-should-use.plugin.zsh
+
+
+if type brew &>/dev/null; then
+	FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
+
+	autoload -Uz compinit
+	compinit
+fi
+
